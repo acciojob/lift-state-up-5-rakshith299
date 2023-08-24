@@ -4,15 +4,22 @@ import ReactDOM from "react-dom";
 
 const Child = ({setIsLoggedIn}) => {
 
+    function onSubmit(e){
+        e.preventDefault();
+        setIsLoggedIn(true)
+    }
+
     return(
         <div>
-            <label>Username:</label>
-            <input type = "text"/><br/>
+            <form onSubmit={onSubmit}>
+                <label>Username:</label>
+                <input type = "text"/><br/>
 
-            <label>Password:</label>
-            <input type="password"/><br/>
+                <label>Password:</label>
+                <input type="password"/><br/>
 
-            <button onClick = {() => setIsLoggedIn(true)}>Login</button>
+                <button>Login</button>
+            </form>
         </div>
     )
 }
